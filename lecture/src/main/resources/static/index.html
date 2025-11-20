@@ -21,8 +21,8 @@
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/logo.png" alt="" class="logo-small" /></span>
 						<h1>ApplePie</h1>
-						<p>Your trusted partner in software solutions.<br />
-						Crafted with passion by the ApplePie team.</p>
+						<p>Your helpful partner for software needs.<br />
+						Created with care by our small ApplePie team.</p>
 					</header>
 
 				<!-- Nav -->
@@ -30,6 +30,7 @@
 						<ul>
 							<li><a href="#intro" class="active">Introduction</a></li>
 							<li><a href="/soap">SOAP</a></li>
+							<li><a href="#" id="forex-account-nav-link">Forex Account</a></li> <!-- Moved link for Forex Account -->
 							<li><a href="#first">Services</a></li>
 							<li><a href="#second">About Us</a></li>
 							<li><a href="#cta">Get Started</a></li>
@@ -46,7 +47,7 @@
 										<header class="major">
 											<h2>Welcome to ApplePie</h2>
 										</header>
-										<p>We are a software company dedicated to creating innovative and user-friendly solutions. Our team of experts is passionate about technology and committed to delivering high-quality products that meet the needs of our clients.</p>
+										<p>We are a small, dedicated software team focused on delivering practical and user-friendly solutions. We are passionate about technology and committed to providing products that meet our clients' needs.</p>
 										<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
 										</ul>
@@ -59,22 +60,39 @@
 							<section id="first" class="main special">
 								<header class="major">
 									<h2>Our Services</h2>
+									<p>At ApplePie, our small team focuses on delivering these key services:</p>
 								</header>
 								<ul class="features">
 									<li>
 										<span class="icon solid major style1 fa-code"></span>
 										<h3>Custom Software Development</h3>
-										<p>We build bespoke software solutions tailored to your specific business needs.</p>
+										<p>We develop tailored software solutions to fit your specific business requirements, helping you improve efficiency.</p>
 									</li>
 									<li>
 										<span class="icon major style3 fa-copy"></span>
 										<h3>Web Application Development</h3>
-										<p>We create modern and responsive web applications to help you reach a wider audience.</p>
+										<p>We build functional and user-friendly web applications to help you better showcase your business online.</p>
 									</li>
 									<li>
 										<span class="icon major style5 fa-gem"></span>
 										<h3>Mobile App Development</h3>
-										<p>We develop native and cross-platform mobile apps for both iOS and Android.</p>
+										<p>We create practical mobile applications for both iOS and Android platforms, facilitating interaction with your users.</p>
+									</li>
+									<!-- New services based on implemented features -->
+									<li>
+										<span class="icon solid major style1 fa-chart-line"></span>
+										<h3>Financial Data Integration (SOAP)</h3>
+										<p>Using SOAP client integrations, we help you retrieve and display financial data from external services for easy viewing and analysis.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-wallet"></span>
+										<h3>Forex Account Tools</h3>
+										<p>We provide tools to help you monitor your Forex trading accounts, including viewing account information, real-time prices, and historical data.</p>
+									</li>
+									<li>
+										<span class="icon solid major style5 fa-shield-alt"></span>
+										<h3>Spring Boot Java Applications</h3>
+										<p>We develop reliable Java applications using the Spring Boot framework, focusing on security, stability, and scalability as needed.</p>
 									</li>
 								</ul>
 								<footer class="major">
@@ -88,7 +106,7 @@
 							<section id="second" class="main special">
 								<header class="major">
 									<h2>About Us</h2>
-									<p>Founded in 2023, ApplePie has been at the forefront of software innovation. Our mission is to empower businesses with technology.</p>
+									<p>Founded in 2023, ApplePie aims to help businesses solve problems through technology.</p>
 								</header>
 								<ul class="statistics">
 									<li class="style1">
@@ -112,7 +130,7 @@
 										<strong>10+</strong> Awards
 									</li>
 								</ul>
-								<p class="content">At ApplePie, we believe in the power of collaboration. We work closely with our clients to understand their challenges and develop solutions that drive growth and efficiency. Our team is our greatest asset, and we are proud to have a diverse group of talented individuals who are passionate about what they do.</p>
+								<p class="content">At ApplePie, we believe in the power of collaboration. We work closely with our clients to understand their challenges and develop solutions that bring real benefits. Our team may be small, but we are vibrant and each member is dedicated to their work.</p>
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="generic.html" class="button">Learn More</a></li>
@@ -124,7 +142,7 @@
 							<section id="cta" class="main special">
 								<header class="major">
 									<h2>Ready to get started?</h2>
-									<p>Contact us today for a free consultation and let's build something amazing together.</p>
+									<p>Contact us today for a free consultation, and let's build something together.</p>
 								</header>
 								<footer class="major">
 									<ul class="actions special">
@@ -134,13 +152,23 @@
 								</footer>
 							</section>
 
+						<!-- Forex Account Section - New section to display account info -->
+							<section id="forex-account-section" class="main special" style="display: none;">
+								<header class="major">
+									<h2>Forex Account Information</h2>
+								</header>
+								<div id="forex-account-content">
+									<p>Loading account data...</p> <!-- Initial loading message -->
+								</div>
+							</section>
+
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
 							<h2>About ApplePie</h2>
-							<p>ApplePie is a leading provider of custom software solutions. We are dedicated to helping businesses succeed through technology.</p>
+							<p>ApplePie is dedicated to providing custom software solutions, helping businesses progress through technology.</p>
 							<ul class="actions">
 								<li><a href="generic.html" class="button">Learn More</a></li>
 							</ul>
@@ -172,6 +200,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/forex-account.js"></script> <!-- New script for Forex Account functionality -->
 
 	</body>
 </html>

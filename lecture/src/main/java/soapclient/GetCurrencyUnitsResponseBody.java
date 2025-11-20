@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>GetCurrencyUnitsResponseBody complex type的 Java 类。
+ * <p>Java class for GetCurrencyUnitsResponseBody complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
  * <complexType name="GetCurrencyUnitsResponseBody">
@@ -37,7 +37,7 @@ public class GetCurrencyUnitsResponseBody {
     protected JAXBElement<String> getCurrencyUnitsResult;
 
     /**
-     * 获取getCurrencyUnitsResult属性的值。
+     * Gets the value of the getCurrencyUnitsResult property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class GetCurrencyUnitsResponseBody {
     }
 
     /**
-     * 设置getCurrencyUnitsResult属性的值。
+     * Sets the value of the getCurrencyUnitsResult property.
      * 
      * @param value
      *     allowed object is

@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>GetDateIntervalResponseBody complex type的 Java 类。
+ * <p>Java class for GetDateIntervalResponseBody complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
  * <complexType name="GetDateIntervalResponseBody">
@@ -37,7 +37,7 @@ public class GetDateIntervalResponseBody {
     protected JAXBElement<String> getDateIntervalResult;
 
     /**
-     * 获取getDateIntervalResult属性的值。
+     * Gets the value of the getDateIntervalResult property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class GetDateIntervalResponseBody {
     }
 
     /**
-     * 设置getDateIntervalResult属性的值。
+     * Sets the value of the getDateIntervalResult property.
      * 
      * @param value
      *     allowed object is

@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>GetInfoResponseBody complex type的 Java 类。
+ * <p>Java class for GetInfoResponseBody complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
  * <complexType name="GetInfoResponseBody">
@@ -37,7 +37,7 @@ public class GetInfoResponseBody {
     protected JAXBElement<String> getInfoResult;
 
     /**
-     * 获取getInfoResult属性的值。
+     * Gets the value of the getInfoResult property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class GetInfoResponseBody {
     }
 
     /**
-     * 设置getInfoResult属性的值。
+     * Sets the value of the getInfoResult property.
      * 
      * @param value
      *     allowed object is

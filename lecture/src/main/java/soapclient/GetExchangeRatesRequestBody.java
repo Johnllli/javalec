@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>GetExchangeRatesRequestBody complex type的 Java 类。
+ * <p>Java class for GetExchangeRatesRequestBody complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
  * <complexType name="GetExchangeRatesRequestBody">
@@ -45,7 +45,7 @@ public class GetExchangeRatesRequestBody {
     protected JAXBElement<String> currencyNames;
 
     /**
-     * 获取startDate属性的值。
+     * Gets the value of the startDate property.
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class GetExchangeRatesRequestBody {
     }
 
     /**
-     * 设置startDate属性的值。
+     * Sets the value of the startDate property.
      * 
      * @param value
      *     allowed object is
@@ -69,7 +69,7 @@ public class GetExchangeRatesRequestBody {
     }
 
     /**
-     * 获取endDate属性的值。
+     * Gets the value of the endDate property.
      * 
      * @return
      *     possible object is
@@ -81,7 +81,7 @@ public class GetExchangeRatesRequestBody {
     }
 
     /**
-     * 设置endDate属性的值。
+     * Sets the value of the endDate property.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +93,7 @@ public class GetExchangeRatesRequestBody {
     }
 
     /**
-     * 获取currencyNames属性的值。
+     * Gets the value of the currencyNames property.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public class GetExchangeRatesRequestBody {
     }
 
     /**
-     * 设置currencyNames属性的值。
+     * Sets the value of the currencyNames property.
      * 
      * @param value
      *     allowed object is

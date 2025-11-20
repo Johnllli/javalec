@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>GetCurrentExchangeRatesResponseBody complex type的 Java 类。
+ * <p>Java class for GetCurrentExchangeRatesResponseBody complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
  * <complexType name="GetCurrentExchangeRatesResponseBody">
@@ -37,7 +37,7 @@ public class GetCurrentExchangeRatesResponseBody {
     protected JAXBElement<String> getCurrentExchangeRatesResult;
 
     /**
-     * 获取getCurrentExchangeRatesResult属性的值。
+     * Gets the value of the getCurrentExchangeRatesResult property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class GetCurrentExchangeRatesResponseBody {
     }
 
     /**
-     * 设置getCurrentExchangeRatesResult属性的值。
+     * Sets the value of the getCurrentExchangeRatesResult property.
      * 
      * @param value
      *     allowed object is

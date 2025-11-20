@@ -7,9 +7,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>GetCurrentExchangeRatesRequestBody complex type的 Java 类。
+ * <p>Java class for GetCurrentExchangeRatesRequestBody complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>{@code
  * <complexType name="GetCurrentExchangeRatesRequestBody">
