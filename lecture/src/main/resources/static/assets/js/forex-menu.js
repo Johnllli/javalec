@@ -1,4 +1,31 @@
 $(document).ready(function() {
+    // Function to load content dynamically
+    function loadContent(url, targetSectionId, contentDivId, navLinkId) {
+        // Hide all other main content sections
+        $('#main > section').hide();
+
+        // Show the target section
+        $(targetSectionId).show();
+
+        // Update active navigation link
+        $('#nav ul li a').removeClass('active');
+        $(navLinkId).addClass('active');
+
+        // Load content via AJAX
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function(data) {
+                $(contentDivId).html(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $(contentDivId).html('<p style="color: red;">Error loading content: ' + textStatus + '</p>');
+                console.error("Error fetching content from " + url + ":", textStatus, errorThrown);
+            }
+        });
+    }
+
+    // Event listener for Forex Account nav link
     $('#forex-account-nav-link').on('click', function(e) {
         e.preventDefault(); // Prevent default link behavior
 
@@ -23,7 +50,7 @@ $(document).ready(function() {
                 for (const key in data) {
                     if (data.hasOwnProperty(key)) {
                         // Basic formatting, you can enhance this
-                        contentHtml += `<li><strong>${key}:</strong> ${data[key]}</li>`;
+                        contentHtml += `<li><strong>${key}:</strong> ${key}: ${data[key]}</li>`;
                     }
                 }
                 contentHtml += '</ul>';
@@ -34,5 +61,11 @@ $(document).ready(function() {
                 console.error("Error fetching Forex account data:", textStatus, errorThrown);
             }
         });
+    });
+
+    // Event listener for Forex ActPrice nav link
+    $('#forex-actprice-nav-link').on('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        loadContent('/forex-actprice', '#forex-actprice-section', '#forex-actprice-content', '#forex-actprice-nav-link');
     });
 });
