@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SOAP Client</title>
+</head>
+<body>
+
+<div th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+    <section class="main">
+        <div class="spotlight">
+            <div class="content">
+                <header class="major">
+                    <h2>MNB Exchange Rate Query</h2>
+                </header>
+                <form action="#" th:action="@{/soap}" th:object="${param}" method="post">
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-xsmall">
+                            <label for="currency">Currency</label>
+                            <select id="currency" th:field="*{currency}">
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" id="startDate" th:field="*{startDate}" />
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <label for="endDate">End Date</label>
+                            <input type="date" id="endDate" th:field="*{endDate}" />
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="submit" value="Submit" class="primary" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

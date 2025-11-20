@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:replace="${title}">ApplePie</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <span class="logo"><img src="/images/logo.png" alt="" class="logo-small" /></span>
+        <h1>ApplePie</h1>
+        <p>Your trusted partner in software solutions.<br />
+            Crafted with passion by the ApplePie team.</p>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="/">Introduction</a></li>
+            <li><a href="/soap">SOAP</a></li>
+            <li><a href="/#first">Services</a></li>
+            <li><a href="/#second">About Us</a></li>
+            <li><a href="/#cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main" th:replace="${content}">
+        <!-- This is where the content of other pages will be inserted -->
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <section>
+            <h2>About ApplePie</h2>
+            <p>ApplePie is a leading provider of custom software solutions. We are dedicated to helping businesses succeed through technology.</p>
+            <ul class="actions">
+                <li><a href="generic.html" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contact Us</h2>
+            <dl class="alt">
+                <dt>Address</dt>
+                <dd>1234 Innovation Drive &bull; Tech City, 12345 &bull; USA</dd>
+                <dt>Phone</dt>
+                <dd>(123) 456-7890</dd>
+                <dt>Email</dt>
+                <dd><a href="#">contact@applepie.com</a></dd>
+            </dl>
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+            </ul>
+        </section>
+        <p class="copyright">&copy; ApplePie. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
