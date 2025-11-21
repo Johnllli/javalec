@@ -10,6 +10,10 @@ import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
 import com.oanda.v20.primitives.InstrumentName;
 import com.oanda.v20.instrument.CandlestickGranularity;
+import com.oanda.v20.order.MarketOrderRequest;
+import com.oanda.v20.order.OrderCreateRequest;
+import com.oanda.v20.order.OrderCreateResponse;
+import com.oanda.v20.primitives.DecimalNumber;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -114,10 +118,9 @@ public class LectureApplication {
 
         try {
             CandlestickGranularity granularity = CandlestickGranularity.valueOf(granularityStr);
-
             InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(instrument));
             request.setGranularity(granularity);
-            request.setCount(10L); // Request last 10 historical prices
+            request.setCount(10L);
 
             InstrumentCandlesResponse resp = ctx.instrument.candles(request);
 
@@ -128,14 +131,11 @@ public class LectureApplication {
                 for (Candlestick candle : resp.getCandles()) {
                     sb.append("<li>")
                       .append("Time: ").append(candle.getTime());
-                    
-                    // Safely check if mid-point data exists
                     if (candle.getMid() != null) {
                         sb.append(", Close (Mid): ").append(candle.getMid().getC().toString());
                     } else {
                         sb.append(", (Price data not available for this candle)");
                     }
-                    
                     sb.append("</li>");
                 }
                 sb.append("</ul>");
@@ -143,10 +143,6 @@ public class LectureApplication {
             } else {
                 historicalPriceInfo = "No historical price data found for " + instrument + " with granularity " + granularityStr;
             }
-
-        } catch (IllegalArgumentException e) {
-            historicalPriceInfo = "Invalid granularity selected: " + granularityStr;
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
             historicalPriceInfo = "Error fetching historical prices for " + instrument + ": " + e.getMessage();
@@ -156,5 +152,42 @@ public class LectureApplication {
         model.addAttribute("selectedGranularity", granularityStr);
         model.addAttribute("historicalPriceInfo", historicalPriceInfo);
         return "result_hist_prices";
+    }
+
+    @GetMapping("/forex-open")
+    public String showOpenPositionForm(Model model) {
+        model.addAttribute("messageOpenPosition", new MessageOpenPosition());
+        List<String> instruments = Arrays.asList("EUR_USD", "USD_JPY", "GBP_USD", "USD_CHF", "AUD_USD", "NZD_USD");
+        model.addAttribute("instruments", instruments);
+        return "form_open_position";
+    }
+
+    @PostMapping("/forex-open")
+    public String openPosition(@ModelAttribute MessageOpenPosition messageOpenPosition, Model model) {
+        Context ctx = new Context(Config.URL, Config.TOKEN);
+        String instrument = messageOpenPosition.getInstrument();
+        int units = messageOpenPosition.getUnits();
+        String resultMessage;
+
+        try {
+            MarketOrderRequest marketOrderRequest = new MarketOrderRequest();
+            marketOrderRequest.setInstrument(new InstrumentName(instrument));
+            marketOrderRequest.setUnits(new DecimalNumber(units));
+
+            OrderCreateRequest orderCreateRequest = new OrderCreateRequest(Config.ACCOUNTID);
+            orderCreateRequest.setOrder(marketOrderRequest);
+
+            OrderCreateResponse response = ctx.order.create(orderCreateRequest);
+            
+            resultMessage = "Successfully opened position for " + units + " units of " + instrument + ".<br>" +
+                            "Transaction ID: " + response.getOrderFillTransaction().getId();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultMessage = "Error opening position for " + instrument + ": " + e.getMessage();
+        }
+
+        model.addAttribute("resultMessage", resultMessage);
+        return "result_open_position";
     }
 }
