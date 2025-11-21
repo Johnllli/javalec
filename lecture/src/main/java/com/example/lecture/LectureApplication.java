@@ -14,6 +14,7 @@ import com.oanda.v20.order.MarketOrderRequest;
 import com.oanda.v20.order.OrderCreateRequest;
 import com.oanda.v20.order.OrderCreateResponse;
 import com.oanda.v20.primitives.DecimalNumber;
+import com.oanda.v20.trade.Trade; // Import Trade class
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -189,5 +190,18 @@ public class LectureApplication {
 
         model.addAttribute("resultMessage", resultMessage);
         return "result_open_position";
+    }
+
+    @GetMapping("/forex-pos")
+    public String getOpenPositions(Model model) {
+        Context ctx = new Context(Config.URL, Config.TOKEN);
+        try {
+            List<Trade> openTrades = ctx.trade.listOpen(Config.ACCOUNTID).getTrades();
+            model.addAttribute("openTrades", openTrades);
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("errorMessage", "Error fetching open positions: " + e.getMessage());
+        }
+        return "open_positions"; // Renders a new open_positions.html template
     }
 }
