@@ -15,8 +15,8 @@ import com.oanda.v20.order.OrderCreateRequest;
 import com.oanda.v20.order.OrderCreateResponse;
 import com.oanda.v20.primitives.DecimalNumber;
 import com.oanda.v20.trade.Trade;
-import com.oanda.v20.trade.TradeCloseRequest; // Import TradeCloseRequest
-import com.oanda.v20.trade.TradeSpecifier; // Import TradeSpecifier
+import com.oanda.v20.trade.TradeCloseRequest;
+import com.oanda.v20.trade.TradeSpecifier;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -104,10 +104,12 @@ public class LectureApplication {
     public String showHistoricalPricesForm(Model model) {
         model.addAttribute("messageHistPrice", new MessageHistPrice());
         List<String> instruments = Arrays.asList("EUR_USD", "USD_JPY", "GBP_USD", "USD_CHF", "AUD_USD", "NZD_USD");
-        List<String> granularities = Arrays.stream(CandlestickGranularity.values())
-                                            .map(Enum::name)
-                                            .collect(Collectors.toList());
+        
+        // Hardcoded list of granularities for testing
+        List<String> granularities = Arrays.asList("M1", "M5", "M15", "M30", "H1", "H4", "D", "W", "M");
+
         model.addAttribute("instruments", instruments);
+        model.addAttribute("granularities", granularities);
         return "form_hist_prices";
     }
 
@@ -122,7 +124,7 @@ public class LectureApplication {
             CandlestickGranularity granularity = CandlestickGranularity.valueOf(granularityStr);
             InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(instrument));
             request.setGranularity(granularity);
-            request.setCount(10L);
+            request.setCount(10L); // Request last 10 historical prices
 
             InstrumentCandlesResponse resp = ctx.instrument.candles(request);
 
