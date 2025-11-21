@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html th:replace="~{layout :: layout(~{::title}, ~{::#main-content})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Close Forex Position</title>
+</head>
+<body>
+    <div id="main-content">
+        <section class="main special">
+            <header class="major">
+                <h2>Close an Open Position</h2>
+                <p>Enter the Trade ID of the position you wish to close.</p>
+            </header>
+            <form action="#" th:action="@{/forex-close}" th:object="${messageClosePosition}" method="post">
+                <div class="field">
+                    <label for="tradeId">Trade ID:</label>
+                    <input type="text" id="tradeId" th:field="*{tradeId}" required />
+                </div>
+                <ul class="actions special">
+                    <li><input type="submit" value="Close Position" class="primary" /></li>
+                </ul>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

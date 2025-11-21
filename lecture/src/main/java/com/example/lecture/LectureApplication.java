@@ -14,7 +14,9 @@ import com.oanda.v20.order.MarketOrderRequest;
 import com.oanda.v20.order.OrderCreateRequest;
 import com.oanda.v20.order.OrderCreateResponse;
 import com.oanda.v20.primitives.DecimalNumber;
-import com.oanda.v20.trade.Trade; // Import Trade class
+import com.oanda.v20.trade.Trade;
+import com.oanda.v20.trade.TradeCloseRequest; // Import TradeCloseRequest
+import com.oanda.v20.trade.TradeSpecifier; // Import TradeSpecifier
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -106,7 +108,6 @@ public class LectureApplication {
                                             .map(Enum::name)
                                             .collect(Collectors.toList());
         model.addAttribute("instruments", instruments);
-        model.addAttribute("granularities", granularities);
         return "form_hist_prices";
     }
 
@@ -202,6 +203,30 @@ public class LectureApplication {
             e.printStackTrace();
             model.addAttribute("errorMessage", "Error fetching open positions: " + e.getMessage());
         }
-        return "open_positions"; // Renders a new open_positions.html template
+        return "open_positions";
+    }
+
+    @GetMapping("/forex-close")
+    public String showClosePositionForm(Model model) {
+        model.addAttribute("messageClosePosition", new MessageClosePosition());
+        return "form_close_position";
+    }
+
+    @PostMapping("/forex-close")
+    public String closePosition(@ModelAttribute MessageClosePosition messageClosePosition, Model model) {
+        Context ctx = new Context(Config.URL, Config.TOKEN);
+        String tradeId = messageClosePosition.getTradeId();
+        String resultMessage;
+
+        try {
+            ctx.trade.close(new TradeCloseRequest(Config.ACCOUNTID, new TradeSpecifier(tradeId)));
+            resultMessage = "Successfully closed position with Trade ID: " + tradeId;
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultMessage = "Error closing position with Trade ID " + tradeId + ": " + e.getMessage();
+        }
+
+        model.addAttribute("resultMessage", resultMessage);
+        return "result_close_position";
     }
 }

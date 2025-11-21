@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html th:replace="~{layout :: layout(~{::title}, ~{::#main-content})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Close Position Result</title>
+</head>
+<body>
+    <div id="main-content">
+        <section class="main special">
+            <header class="major">
+                <h2>Position Closing Result</h2>
+            </header>
+            <div class="content">
+                <p th:utext="${resultMessage}"></p>
+            </div>
+            <ul class="actions special">
+                <li><a th:href="@{/forex-close}" class="button">Close Another Position</a></li>
+                <li><a th:href="@{/forex-pos}" class="button">View Open Positions</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
