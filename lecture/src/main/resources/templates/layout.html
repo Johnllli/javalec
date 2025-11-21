@@ -16,31 +16,34 @@
     <header id="header" class="alt">
         <span class="logo"><img src="/images/logo.png" alt="" class="logo-small" /></span>
         <h1>ApplePie</h1>
-        <p>Your trusted partner in software solutions.<br />
-            Crafted with passion by the ApplePie team.</p>
+        <p>Your helpful partner for software needs.<br />
+            Created with care by our small ApplePie team.</p>
     </header>
 
     <!-- Nav -->
     <nav id="nav">
         <ul>
+            <!-- Changed to real links -->
             <li><a href="/">Introduction</a></li>
             <li><a href="/soap">SOAP</a></li>
+            <li><a href="/forex-account">Forex Account</a></li>
+            <li><a href="/forex-actprice">Forex ActPrice</a></li>
+            <li><a href="/forex-histprice">Forex HistPrice</a></li>
             <li><a href="/#first">Services</a></li>
             <li><a href="/#second">About Us</a></li>
-            <li><a href="/#cta">Get Started</a></li>
         </ul>
     </nav>
 
     <!-- Main -->
-    <div id="main" th:replace="${content}">
-        <!-- This is where the content of other pages will be inserted -->
+    <div id="main">
+        <th:block th:replace="${content}" />
     </div>
 
     <!-- Footer -->
     <footer id="footer">
         <section>
             <h2>About ApplePie</h2>
-            <p>ApplePie is a leading provider of custom software solutions. We are dedicated to helping businesses succeed through technology.</p>
+            <p>ApplePie is dedicated to providing custom software solutions, helping businesses progress through technology.</p>
             <ul class="actions">
                 <li><a href="generic.html" class="button">Learn More</a></li>
             </ul>
@@ -56,7 +59,7 @@
                 <dd><a href="#">contact@applepie.com</a></dd>
             </dl>
             <ul class="icons">
-                <li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+                <li><a href="https://github.com/Johnllli/javalec" class="icon brands fa-github alt" target="_blank"><span class="label">GitHub</span></a></li>
             </ul>
         </section>
         <p class="copyright">&copy; ApplePie. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
@@ -72,6 +75,7 @@
 <script src="/assets/js/breakpoints.min.js"></script>
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
+<!-- forex-menu.js is no longer needed for navigation -->
 
 </body>
 </html>

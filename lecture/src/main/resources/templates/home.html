@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html th:replace="~{layout :: layout(title=~{::title}, content=~{::#home-content})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ApplePie - Home</title>
+</head>
+<body>
+    <div id="home-content">
+        <!-- Introduction -->
+        <section id="intro" class="main">
+            <div class="spotlight">
+                <div class="content">
+                    <header class="major">
+                        <h2>Welcome to ApplePie</h2>
+                    </header>
+                    <p>We are a small, dedicated software team focused on delivering practical and user-friendly solutions. We are passionate about technology and committed to providing products that meet our clients' needs.</p>
+                    <ul class="actions">
+                        <li><a href="generic.html" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+                <span class="image"><img src="/images/pic01.jpg" alt="" /></span>
+            </div>
+        </section>
+
+        <!-- First Section (Our Services) -->
+        <section id="first" class="main special">
+            <header class="major">
+                <h2>Our Services</h2>
+                <p>At ApplePie, our small team focuses on delivering these key services:</p>
+            </header>
+            <ul class="features">
+                <li>
+                    <span class="icon solid major style1 fa-code"></span>
+                    <h3>Custom Software Development</h3>
+                    <p>We develop tailored software solutions to fit your specific business requirements, helping you improve efficiency.</p>
+                </li>
+                <li>
+                    <span class="icon major style3 fa-copy"></span>
+                    <h3>Web Application Development</h3>
+                    <p>We build functional and user-friendly web applications to help you better showcase your business online.</p>
+                </li>
+                <li>
+                    <span class="icon major style5 fa-gem"></span>
+                    <h3>Mobile App Development</h3>
+                    <p>We create practical mobile applications for both iOS and Android platforms, facilitating interaction with your users.</p>
+                </li>
+                <li>
+                    <span class="icon solid major style1 fa-chart-line"></span>
+                    <h3>Financial Data Integration (SOAP)</h3>
+                    <p>Using SOAP client integrations, we help you retrieve and display financial data from external services for easy viewing and analysis.</p>
+                </li>
+                <li>
+                    <span class="icon major style3 fa-wallet"></span>
+                    <h3>Forex Account Tools</h3>
+                    <p>We provide tools to help you monitor your Forex trading accounts, including viewing account information, real-time prices, and historical data.</p>
+                </li>
+                <li>
+                    <span class="icon solid major style5 fa-shield-alt"></span>
+                    <h3>Spring Boot Java Applications</h3>
+                    <p>We develop reliable Java applications using the Spring Boot framework, focusing on security, stability, and scalability as needed.</p>
+                </li>
+            </ul>
+            <footer class="major">
+                <ul class="actions special">
+                    <li><a href="generic.html" class="button">Learn More</a></li>
+                </ul>
+            </footer>
+        </section>
+
+        <!-- Second Section (About Us) -->
+        <section id="second" class="main special">
+            <header class="major">
+                <h2>About Us</h2>
+                <p>Founded in 2023, ApplePie aims to help businesses solve problems through technology.</p>
+            </header>
+            <ul class="statistics">
+                <li class="style1">
+                    <span class="icon solid fa-code-branch"></span>
+                    <strong>100+</strong> Projects
+                </li>
+                <li class="style2">
+                    <span class="icon fa-folder-open"></span>
+                    <strong>50+</strong> Clients
+                </li>
+                <li class="style3">
+                    <span class="icon solid fa-signal"></span>
+                    <strong>99%</strong> Satisfaction
+                </li>
+                <li class="style4">
+                    <span class="icon solid fa-laptop"></span>
+                    <strong>24/7</strong> Support
+                </li>
+                <li class="style5">
+                    <span class="icon fa-gem"></span>
+                    <strong>10+</strong> Awards
+                </li>
+            </ul>
+            <p class="content">At ApplePie, we believe in the power of collaboration. We work closely with our clients to understand their challenges and develop solutions that bring real benefits. Our team may be small, but we are vibrant and each member is dedicated to their work.</p>
+            <footer class="major">
+                <ul class="actions special">
+                    <li><a href="generic.html" class="button">Learn More</a></li>
+                </ul>
+            </footer>
+        </section>
+
+        <!-- Forex Account Section -->
+        <section id="forex-account-section" class="main special" style="display: none;">
+            <header class="major">
+                <h2>Forex Account Information</h2>
+            </header>
+            <div id="forex-account-content">
+                <p>Loading account data...</p>
+            </div>
+        </section>
+
+        <!-- Forex ActPrice Section -->
+        <section id="forex-actprice-section" class="main special" style="display: none;">
+            <header class="major">
+                <h2>Forex Actual Price</h2>
+            </header>
+            <div id="forex-actprice-content">
+                <p>Loading form...</p>
+            </div>
+        </section>
+
+        <!-- Forex HistPrice Section -->
+        <section id="forex-histprice-section" class="main special" style="display: none;">
+            <header class="major">
+                <h2>Forex Historical Prices</h2>
+            </header>
+            <div id="forex-histprice-content">
+                <p>Loading form...</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

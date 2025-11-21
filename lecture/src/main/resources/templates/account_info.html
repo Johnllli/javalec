@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html th:replace="~{layout :: layout(~{::title}, ~{::#main-content})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Forex Account Information</title>
+</head>
+<body>
+    <div id="main-content">
+        <section class="main special">
+            <header class="major">
+                <h2>Forex Account Information</h2>
+            </header>
+            <div th:if="${accountSummary}">
+                <h3>Account Details:</h3>
+                <ul>
+                    <li><strong>ID:</strong> <span th:text="${accountSummary.getId()}"></span></li>
+                    <li><strong>Alias:</strong> <span th:text="${accountSummary.getAlias()}"></span></li>
+                    <li><strong>Currency:</strong> <span th:text="${accountSummary.getCurrency()}"></span></li>
+                    <li><strong>Balance:</strong> <span th:text="${accountSummary.getBalance()}"></span></li>
+                    <li><strong>Created By User ID:</strong> <span th:text="${accountSummary.getCreatedByUserID()}"></span></li>
+                    <li><strong>Created Time:</strong> <span th:text="${accountSummary.getCreatedTime()}"></span></li>
+                    <li><strong>Open Trade Count:</strong> <span th:text="${accountSummary.getOpenTradeCount()}"></span></li>
+                    <li><strong>Pending Order Count:</strong> <span th:text="${accountSummary.getPendingOrderCount()}"></span></li>
+                    <li><strong>Margin Available:</strong> <span th:text="${accountSummary.getMarginAvailable()}"></span></li>
+                </ul>
+            </div>
+            <div th:if="${errorMessage}">
+                <p style="color: red;" th:text="${errorMessage}"></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

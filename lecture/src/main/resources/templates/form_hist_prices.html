@@ -1,23 +1,29 @@
 <!DOCTYPE HTML>
 <html th:replace="~{layout :: layout(~{::title}, ~{::#main-content})}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Forex Actual Price</title>
+    <title>Forex Historical Prices</title>
 </head>
 <body>
     <div id="main-content">
         <section class="main special">
             <header class="major">
-                <h2>Select Instrument for Actual Price</h2>
+                <h2>Select Instrument and Granularity for Historical Prices</h2>
             </header>
-            <form action="#" th:action="@{/forex-actprice}" th:object="${messageActPrice}" method="post">
+            <form action="#" th:action="@{/forex-histprice}" th:object="${messageHistPrice}" method="post">
                 <div class="field">
                     <label for="instrument">Instrument:</label>
                     <select id="instrument" th:field="*{instrument}">
                         <option th:each="inst : ${instruments}" th:value="${inst}" th:text="${inst}"></option>
                     </select>
                 </div>
+                <div class="field">
+                    <label for="granularity">Granularity:</label>
+                    <select id="granularity" th:field="*{granularity}">
+                        <option th:each="gran : ${granularities}" th:value="${gran}" th:text="${gran}"></option>
+                    </select>
+                </div>
                 <ul class="actions special">
-                    <li><input type="submit" value="Get Price" class="primary" /></li>
+                    <li><input type="submit" value="Get Historical Prices" class="primary" /></li>
                 </ul>
             </form>
         </section>

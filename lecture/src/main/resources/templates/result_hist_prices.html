@@ -1,19 +1,19 @@
 <!DOCTYPE HTML>
 <html th:replace="~{layout :: layout(~{::title}, ~{::#main-content})}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Forex Actual Price Result</title>
+    <title>Forex Historical Price Result</title>
 </head>
 <body>
     <div id="main-content">
         <section class="main special">
             <header class="major">
-                <h2>Actual Price for <span th:text="${selectedInstrument}"></span></h2>
+                <h2>Historical Prices for <span th:text="${selectedInstrument}"></span> (<span th:text="${selectedGranularity}"></span>)</h2>
             </header>
             <div class="content">
-                <p th:utext="${actualPrice}"></p>
+                <div th:utext="${historicalPriceInfo}"></div>
             </div>
             <ul class="actions special">
-                <li><a th:href="@{/forex-actprice}" class="button">Select Another Instrument</a></li>
+                <li><a th:href="@{/forex-histprice}" class="button">Select Another Instrument</a></li>
             </ul>
         </section>
     </div>

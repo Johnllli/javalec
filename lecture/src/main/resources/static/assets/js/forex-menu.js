@@ -68,4 +68,10 @@ $(document).ready(function() {
         e.preventDefault(); // Prevent default link behavior
         loadContent('/forex-actprice', '#forex-actprice-section', '#forex-actprice-content', '#forex-actprice-nav-link');
     });
+
+    // Event listener for Forex HistPrice nav link
+    $('#forex-histprice-nav-link').on('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        loadContent('/forex-histprice', '#forex-histprice-section', '#forex-histprice-content', '#forex-histprice-nav-link');
+    });
 });
